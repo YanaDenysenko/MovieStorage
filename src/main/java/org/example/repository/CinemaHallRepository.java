@@ -1,4 +1,4 @@
-package org.example.reposotory;
+package org.example.repository;
 
 public interface CinemaHallRepository {
 }
