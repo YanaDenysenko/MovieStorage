@@ -1,11 +1,14 @@
 package org.example.dto;
 
 import lombok.Data;
-import java.util.List;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 @Data
 public class UserDto {
+    private String login;
+    private String password;
     private String name;
-    private int age;
-    private List<TicketDto> tickets;
+    private Timestamp birthday;
+    private ArrayList<TicketDto> tickets;
 }
