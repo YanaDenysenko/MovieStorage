@@ -2,7 +2,7 @@ package org.example.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import java.util.ArrayList;
+import java.util.List;
 import java.sql.Timestamp;
 
 @Data
@@ -23,9 +23,9 @@ public class User {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "birthday")
-    private Timestamp birthday; // TODO change field name
+    @Column(name = "date_of_birth")
+    private Timestamp dateOfBirth;
 
-    @Column(name = "ticket_id")
-    private ArrayList<Ticket> tickets; //TODO
+    @OneToMany(mappedBy="user")
+    private List<Ticket> tickets;
 }

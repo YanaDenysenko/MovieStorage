@@ -8,15 +8,20 @@ import lombok.Data;
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name="id", nullable=false)
     private long id;
 
-    @Column(name = "movie_session", nullable = false)
-    private MovieSession session; //TODO
+    @ManyToOne
+    @JoinColumn(name="movie_session_id", nullable = false)
+    private MovieSession movieSession;
 
     @Column(name = "price", nullable = false)
-    private int price; //TODO refactor price type
+    private double price;
 
     @Column(name = "ticket_status", nullable = false)
     private TicketStatus status;
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 }

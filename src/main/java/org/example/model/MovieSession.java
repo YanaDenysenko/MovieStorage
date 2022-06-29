@@ -20,9 +20,10 @@ public class MovieSession {
     @Column(name = "time", nullable = false)
     private Timestamp time;
 
-    @Column(name = "hall_id", nullable = false)
-    private CinemaHall hall; //TODO
+    @ManyToOne
+    @JoinColumn(name="movie_session_id", nullable = false)
+    private CinemaHall cinemaHall;
 
-    @Column(name = "ticket_id")
-    private List<Ticket> tickets; //TODO
+    @OneToMany(mappedBy="movieSession")
+    private List<Ticket> tickets;
 }

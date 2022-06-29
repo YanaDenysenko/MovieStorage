@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class TicketDto {
     private MovieSessionDto session;
-    private short price;
+    private double price;
     private TicketStatusDto status;
 }
