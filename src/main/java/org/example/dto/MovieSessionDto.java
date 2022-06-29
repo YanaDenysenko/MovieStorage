@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 @Data
-public class SessionDto {
+public class MovieSessionDto {
     private String filmName;
     private Timestamp time;
     private CinemaHallDto hall;

@@ -1,10 +1,20 @@
 package org.example.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
+@Entity
+@Table(name = "cinema_hall")
 public class CinemaHall {
-    private short id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
-    private short seatsCount;
+
+    @Column(name = "seats_count", nullable = false)
+    private int seatsCount;
 }

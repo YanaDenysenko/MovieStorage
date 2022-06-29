@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class CinemaHallDto {
     private String name;
-    private short seatsCount;
+    private int seatsCount;
 }
