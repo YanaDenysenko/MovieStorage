@@ -19,7 +19,7 @@ public class Ticket {
     private double price;
 
     @Column(name = "ticket_status", nullable = false)
-    private TicketStatus status;
+    private TicketStatus ticketStatus;
 
     @ManyToOne
     @JoinColumn(name="user_id")
