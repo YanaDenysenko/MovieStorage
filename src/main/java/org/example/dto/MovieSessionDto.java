@@ -5,10 +5,8 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Data
-public class UserDto {
-    private String login;
-    private String password;
-    private String name;
-    private Timestamp dateOfBirth;
+public class MovieSessionDto {
+    private String filmName;
+    private Timestamp time;
     private List<TicketDto> tickets;
 }
