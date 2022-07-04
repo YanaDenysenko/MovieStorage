@@ -1,50 +1,50 @@
 package org.example.repository.impl;
 
-import org.example.model.CinemaHall;
-import org.example.repository.CinemaHallRepository;
+import org.example.model.MovieSession;
+import org.example.repository.MovieSessionRepository;
 import org.example.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class CinemaHallRepositoryImpl implements CinemaHallRepository {
+public class MovieSessionRepositoryImpl implements MovieSessionRepository {
     private final SessionFactory sessionFactory;
 
-    public CinemaHallRepositoryImpl() {
+    public MovieSessionRepositoryImpl() {
         this.sessionFactory = HibernateSessionFactoryUtil.getSessionFactory();
     }
 
     @Override
-    public CinemaHall getCinemaHallById(long cinemaHallId) {
+    public MovieSession getMovieSessionById(long movieSessionId) {
         Session session = sessionFactory.openSession();
-        CinemaHall cinemaHall = session.get(CinemaHall.class, cinemaHallId);
+        MovieSession movieSession = session.get(MovieSession.class, movieSessionId);
         session.close();
-        return cinemaHall;
+        return movieSession;
     }
 
     @Override
-    public void saveCinemaHall(CinemaHall cinemaHall){
+    public void saveMovieSession(MovieSession movieSession){
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.save(cinemaHall);
+        session.save(movieSession);
         transaction.commit();
         session.close();
     }
 
     @Override
-    public void updateCinemaHall(CinemaHall cinemaHall){
+    public void updateMovieSession(MovieSession movieSession){
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.update(cinemaHall);
+        session.update(movieSession);
         transaction.commit();
         session.close();
     }
 
     @Override
-    public void deleteCinemaHall(CinemaHall cinemaHall){
+    public void deleteMovieSession(MovieSession movieSession){
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(cinemaHall);
+        session.delete(movieSession);
         transaction.commit();
         session.close();
     }
