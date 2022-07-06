@@ -2,10 +2,8 @@ package org.example.mapper;
 
 import org.example.dto.MovieSessionDto;
 import org.example.dto.TicketDto;
-import org.example.dto.UserDto;
 import org.example.model.MovieSession;
 import org.example.model.Ticket;
-import org.example.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +27,17 @@ public class MovieSessionMapper implements BaseMapper<MovieSession, MovieSession
 
     @Override
     public MovieSession mapToModel(MovieSessionDto movieSessionDto) {
-        return null;
+        MovieSession movieSession = new MovieSession();
+        movieSession.setFilmName(movieSessionDto.getFilmName());
+        movieSession.setTime(movieSessionDto.getTime());
+
+        List<Ticket> tickets = new ArrayList<>();
+        for (TicketDto i: movieSessionDto.getTickets()) {
+            tickets.add(ticketMapper.mapToModel(i));
+        }
+        movieSession.setTickets(tickets);
+
+        return movieSession;
     }
 }
 

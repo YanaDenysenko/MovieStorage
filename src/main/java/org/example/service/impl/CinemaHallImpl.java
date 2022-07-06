@@ -12,22 +12,22 @@ public class CinemaHallImpl implements CinemaHallService {
     private CinemaHallMapper cinemaHallMapper;
 
     @Override
-    public CinemaHallDto getCinemaHallDtoById(long cinemaHallId) {
+    public CinemaHallDto getCinemaHallById(long cinemaHallId) {
         return cinemaHallMapper.mapToDto(cinemaHallRepository.getCinemaHallById(cinemaHallId));
     }
 
     @Override
-    public void saveCinemaHallDto(CinemaHallDto cinemaHalDto) {
-
+    public void saveCinemaHall(CinemaHallDto cinemaHallDto) {
+        cinemaHallRepository.saveCinemaHall(cinemaHallMapper.mapToModel(cinemaHallDto));
     }
 
     @Override
-    public void updateCinemaHallDto(CinemaHallDto cinemaHalDto) {
-
+    public void updateCinemaHall(CinemaHallDto cinemaHallDto) {
+        cinemaHallRepository.updateCinemaHall(cinemaHallMapper.mapToModel(cinemaHallDto));
     }
 
     @Override
-    public void deleteCinemaHallDto(CinemaHallDto cinemaHallDto) {
-
+    public void deleteCinemaHall(CinemaHallDto cinemaHallDto) {
+        cinemaHallRepository.deleteCinemaHall(cinemaHallMapper.mapToModel(cinemaHallDto));
     }
 }

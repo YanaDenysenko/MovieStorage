@@ -12,22 +12,22 @@ public class MovieSessionServiceImpl implements MovieSessionService {
     private MovieSessionMapper movieSessionMapper;
 
     @Override
-    public MovieSessionDto getMovieSessionDtoById(long movieSessionId) {
+    public MovieSessionDto getMovieSessionById(long movieSessionId) {
         return movieSessionMapper.mapToDto(movieSessionRepository.getMovieSessionById(movieSessionId));
     }
 
     @Override
-    public void saveMovieSessionDto(MovieSessionDto movieSessionDto) {
-
+    public void saveMovieSession(MovieSessionDto movieSessionDto) {
+        movieSessionRepository.saveMovieSession(movieSessionMapper.mapToModel(movieSessionDto));
     }
 
     @Override
-    public void updateMovieSessionDto(MovieSessionDto movieSessionDto) {
-
+    public void updateMovieSession(MovieSessionDto movieSessionDto) {
+        movieSessionRepository.updateMovieSession(movieSessionMapper.mapToModel(movieSessionDto));
     }
 
     @Override
-    public void deleteMovieSessionDto(MovieSessionDto movieSessionDto) {
-
+    public void deleteMovieSession(MovieSessionDto movieSessionDto) {
+        movieSessionRepository.deleteMovieSession(movieSessionMapper.mapToModel(movieSessionDto));
     }
 }

@@ -12,22 +12,22 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public UserDto getUserDtoById(long userId) {
+    public UserDto getUserById(long userId) {
         return userMapper.mapToDto(userRepository.getUserById(userId));
     }
 
     @Override
-    public void saveUserDto(UserDto userDto) {
-
+    public void saveUser(UserDto userDto) {
+        userRepository.saveUser(userMapper.mapToModel(userDto));
     }
 
     @Override
-    public void updateUserDto(UserDto userDto) {
-
+    public void updateUser(UserDto userDto) {
+        userRepository.updateUser(userMapper.mapToModel(userDto));
     }
 
     @Override
-    public void deleteUserDto(UserDto userDto) {
-
+    public void deleteUser(UserDto userDto) {
+        userRepository.updateUser(userMapper.mapToModel(userDto));
     }
 }

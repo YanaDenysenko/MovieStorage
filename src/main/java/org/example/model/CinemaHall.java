@@ -2,7 +2,6 @@ package org.example.model;
 
 import javax.persistence.*;
 import lombok.Data;
-
 import java.util.List;
 
 @Data

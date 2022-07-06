@@ -29,6 +29,18 @@ public class UserMapper implements BaseMapper<User, UserDto>{
 
     @Override
     public User mapToModel(UserDto userDto) {
-        return null;
+        User user = new User();
+        user.setLogin(userDto.getLogin());
+        user.setPassword(userDto.getPassword());
+        user.setName(userDto.getName());
+        user.setDateOfBirth(userDto.getDateOfBirth());
+
+        List<Ticket> tickets = new ArrayList<>();
+        for (TicketDto i: userDto.getTickets()) {
+            tickets.add(ticketMapper.mapToModel(i));
+        }
+        user.setTickets(tickets);
+
+        return user;
     }
 }

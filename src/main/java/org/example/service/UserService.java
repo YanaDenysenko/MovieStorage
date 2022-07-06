@@ -3,11 +3,11 @@ package org.example.service;
 import org.example.dto.UserDto;
 
 public interface UserService {
-    UserDto getUserDtoById(long userId);
+    UserDto getUserById(long userId);
 
-    void saveUserDto(UserDto userDto);
+    void saveUser(UserDto userDto);
 
-    void updateUserDto(UserDto userDto);
+    void updateUser(UserDto userDto);
 
-    void deleteUserDto(UserDto userDto);
+    void deleteUser(UserDto userDto);
 }

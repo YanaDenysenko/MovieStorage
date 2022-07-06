@@ -11,22 +11,22 @@ public class TicketServiceImpl implements TicketService {
     private TicketRepositoryImpl ticketRepository;
     private TicketMapper ticketMapper;
     @Override
-    public TicketDto getTicketDtoById(long ticketId) {
+    public TicketDto getTicketById(long ticketId) {
         return ticketMapper.mapToDto(ticketRepository.getTicketById(ticketId));
     }
 
     @Override
-    public void saveTicketDto(TicketDto ticketDto) {
-
+    public void saveTicket(TicketDto ticketDto) {
+        ticketRepository.saveTicket(ticketMapper.mapToModel(ticketDto));
     }
 
     @Override
-    public void updateTicketDto(TicketDto ticketDto) {
-
+    public void updateTicket(TicketDto ticketDto) {
+        ticketRepository.updateTicket(ticketMapper.mapToModel(ticketDto));
     }
 
     @Override
-    public void deleteTicketDto(TicketDto ticketDto) {
-
+    public void deleteTicket(TicketDto ticketDto) {
+        ticketRepository.deleteTicket(ticketMapper.mapToModel(ticketDto));
     }
 }

@@ -1,8 +1,6 @@
 package org.example.dto;
 
 import lombok.Data;
-import org.example.model.MovieSession;
-
 import java.util.List;
 
 @Data

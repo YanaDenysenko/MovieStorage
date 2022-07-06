@@ -1,9 +1,7 @@
 package org.example.mapper;
 
 import org.example.dto.TicketDto;
-import org.example.dto.UserDto;
 import org.example.model.Ticket;
-import org.example.model.User;
 
 public class TicketMapper implements BaseMapper<Ticket, TicketDto>{
     @Override
@@ -17,6 +15,10 @@ public class TicketMapper implements BaseMapper<Ticket, TicketDto>{
 
     @Override
     public Ticket mapToModel(TicketDto ticketDto) {
-        return null;
+        Ticket ticket = new Ticket();
+        ticket.setPrice(ticketDto.getPrice());
+        ticket.setTicketStatus(ticketDto.getTicketStatus());
+
+        return ticket;
     }
 }

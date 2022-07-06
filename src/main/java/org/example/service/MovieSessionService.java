@@ -3,11 +3,11 @@ package org.example.service;
 import org.example.dto.MovieSessionDto;
 
 public interface MovieSessionService {
-    MovieSessionDto getMovieSessionDtoById(long movieSessionId);
+    MovieSessionDto getMovieSessionById(long movieSessionId);
 
-    void saveMovieSessionDto(MovieSessionDto movieSessionDto);
+    void saveMovieSession(MovieSessionDto movieSessionDto);
 
-    void updateMovieSessionDto(MovieSessionDto movieSessionDto);
+    void updateMovieSession(MovieSessionDto movieSessionDto);
 
-    void deleteMovieSessionDto(MovieSessionDto movieSessionDto);
+    void deleteMovieSession(MovieSessionDto movieSessionDto);
 }
